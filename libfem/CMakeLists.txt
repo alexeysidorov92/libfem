@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.2)
+set(CMAKE_CONFIGURATION_TYPES Debug Release CACHE TYPE INTERNAL FORCE)
+project(libfem)
+
+include(GetProjectFiles)
+
+set(LIBFEM_FILES)
+get_project_files(LIBFEM_FILES)
+add_library(${PROJECT_NAME} STATIC ${LIBFEM_FILES})
+
+list(APPEND LIBFEM_INCLUDE_DIRS
+    "${CMAKE_CURRENT_SOURCE_DIR}/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src"
+)
+
+set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY INCLUDE_DIRECTORIES ${LIBFEM_INCLUDE_DIRS})
+
+set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
