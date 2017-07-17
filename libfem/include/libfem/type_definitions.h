@@ -10,7 +10,7 @@ namespace libfem
 
 	using dVector = std::vector<double>;
 	using iVector = std::vector<int>;
-	using zVector = std::vector<std::complex<double>>;
+	using zVector = std::vector<dComplex>;
 }
 
 #endif
