@@ -9,8 +9,7 @@ namespace libfem
 	namespace io
 	{
 		dVector read_vector(std::istream& in);
-
-		bool read_vector(std::istream& in, dVector& v);
+		void read_vector(std::istream& in, dVector& v);
 	}
 }
 
